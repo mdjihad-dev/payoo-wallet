@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payoo | Home</title>
+  <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+
+  <!-- Fontawesome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind & Daisy Ui -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style>
+    * {
+       font-family: "Outfit", sans-serif;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen max-w-md bg-slate-50 mx-auto">
+
+    <!-- === Header area === -->
+    <header class="border-b-2 border-gray-300 py-8 w-11/12 mx-auto flex justify-between items-center sticky top-0 bg-base-200 z-10">
+
+        <!-- Header Left -->
+        <div class="left flex justify-center items-center gap-1">
+            <div class="logo">
+                <img class="w-[65px] h-auto" src="./assets/logo.png" alt="payoo Logo">
+            </div>
+            <div class="header-info">
+                <h2 class="text-xl font-bold">$<span id="balance">45000</span></h2>
+                <p class="text-gray-600">Available Balance</p>
+            </div>
+        </div>
+
+        <!-- Header Right -->
+        <div class="right btn">
+            <a href="/index.html"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+        </div>
+    </header>
+
+    <!-- === Home Info === -->
+    <section class="w-11/12 mx-auto">
+        <div class="py-10 space-y-3">
+            <h2 class="text-2xl font-bold">Welcome to Pay<span class="text-primary">oo</span></h2>
+            <p class="text-gray-500">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+        </div>
+
+        <section class="grid grid-cols-3 gap-3">
+
+            <button class="btn btn-soft btn-primary py-12 px-6 flex-col">
+                <img src="./assets/opt-1.png" alt="">
+                <p>Add Money</p>
+            </button>
+            <button class="btn btn-soft btn-primary py-12 px-6 flex-col">
+                <img src="./assets/opt-2.png" alt="">
+                <p>Cashout</p>
+            </button>
+            <button class="btn btn-soft btn-primary py-12 px-6 flex-col">
+                <img src="./assets/opt-3.png" alt="">
+                <p>Transfer Money</p>
+            </button>
+            <button class="btn btn-soft btn-primary py-12 px-6 flex-col">
+                <img src="./assets/opt-4.png" alt="">
+                <p>Get Bonus</p>
+            </button>
+            <button class="btn btn-soft btn-primary py-12 px-6 flex-col">
+                <img src="./assets/opt-5.png" alt="">
+                <p>Pay Bill</p>
+            </button>
+            <button class="btn btn-soft btn-primary py-12 px-6 flex-col">
+                <img src="./assets/opt-6.png" alt="">
+                <p>Transactions</p>
+            </button>
+
+        </section>
+    </section>
+
+    <!-- === Home cashout section === -->
+    <div class="w-11/12 mx-auto pb-14">
+        <div class="mt-7">
+            <h2 class="text-xl font-bold">Cash Out</h2>
+        </div>
+
+        <div class="mt-8">
+          <fieldset class="mx-auto fieldset bg-white border-base-300 rounded-box border px-5 py-8">
+            <label class="ml-6 text-sm font-bold">Agent Number</label>
+            <input id="cashout-number" maxlength="11" value="0123456789" type="number" class="mx-auto bg-slate-50 input rounded-full" placeholder="Enter 11 digit number" required/>
+            <br>
+            <label class="ml-6 text-sm font-bold">Amount</label>
+            <input id="input-amount" maxlength="4" type="number" class="mx-auto mb-7 bg-slate-50 input rounded-full" placeholder="Enter amount to withdraw" required/>
+
+            <label class="ml-6 text-sm font-bold">Pin Number</label>
+            <input id="cashout-pin" maxlength="4" type="password" class="mx-auto bg-slate-50 input rounded-full" placeholder="Enter 4 digit pin number" required/>
+    
+            <button id="cashout-btn" class="btn btn-primary mt-4 rounded-full">Withdraw Money</button>
+          </fieldset>
+        </div>
+    </div>
+
+    <script src="./script/cashout.js"></script>
+</body>
+</html>
