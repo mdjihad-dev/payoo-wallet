@@ -89,7 +89,7 @@
           <p>Cashout</p>
         </button>
 
-        <button class="btn btn-soft btn-primary py-12 px-6 flex-col">
+        <button onclick="showOnly('transfer-money-container')" class="btn btn-soft btn-primary py-12 px-6 flex-col">
           <img src="./assets/opt-3.png" alt="" />
           <p>Transfer Money</p>
         </button>
@@ -98,19 +98,22 @@
           <img src="./assets/opt-4.png" alt="" />
           <p>Get Bonus</p>
         </button>
+
         <button class="btn btn-soft btn-primary py-12 px-6 flex-col">
           <img src="./assets/opt-5.png" alt="" />
           <p>Pay Bill</p>
         </button>
-        <button class="btn btn-soft btn-primary py-12 px-6 flex-col">
+
+        <button onclick="showOnly('transactions')" class="btn btn-soft btn-primary py-12 px-6 flex-col">
           <img src="./assets/opt-6.png" alt="" />
           <p>Transactions</p>
         </button>
+
       </section>
     </section>
 
     <!-- === Add Money Section === -->
-    <section id="addMoney" class="w-11/12 mx-auto pb-14 hidden">
+    <section id="addMoney" class="w-11/12 mx-auto pb-14">
       <div class="mt-7">
         <h2 class="text-xl font-bold">Add Money</h2>
       </div>
@@ -169,7 +172,7 @@
     </section>
 
     <!-- === cashout section === -->
-    <section id="cashout" class="w-11/12 mx-auto pb-14">
+    <section id="cashout" class="w-11/12 mx-auto pb-14 hidden">
       <div class="mt-7">
         <h2 class="text-xl font-bold">Cash Out</h2>
       </div>
@@ -182,7 +185,6 @@
           <input
             id="cashout-number"
             maxlength="11"
-            value="0123456789"
             type="number"
             class="mx-auto bg-slate-50 input rounded-full"
             placeholder="Enter 11 digit number"
@@ -216,8 +218,71 @@
       </div>
     </section>
 
+    <!-- === Transactions Section === -->
+    <section id="transactions" class="w-11/12 mx-auto pb-14 hidden">
+
+      <div class="mt-7">
+        <h2 class="text-xl font-bold">Transactions</h2>
+      </div>
+
+      <div id="transactions-container">
+        
+      </div>
+    </section>
+
+    <!-- === Transfer Money section === -->
+    <section id="transfer-money-container" class="w-11/12 mx-auto pb-14 hidden">
+
+      <div class="mt-7">
+        <h2 class="text-xl font-bold">Transfer Money</h2>
+      </div>
+
+      <div class="mt-8">
+        <fieldset
+          class="mx-auto fieldset bg-white border-base-300 rounded-box border px-5 py-8"
+        >
+          <label class="ml-6 text-sm font-bold">User Account Number</label>
+          <input
+            id="transfer-number"
+            maxlength="11"
+            type="number"
+            class="mx-auto bg-slate-50 input rounded-full"
+            placeholder="Enter 11 digit number"
+            required
+          />
+          <br />
+          <label class="ml-6 text-sm font-bold">Amount</label>
+          <input
+            id="transfer-amount"
+            maxlength="4"
+            type="number"
+            class="mx-auto mb-7 bg-slate-50 input rounded-full"
+            placeholder="Enter amount to transfer"
+            required
+          />
+
+          <label class="ml-6 text-sm font-bold">Pin Number</label>
+          <input
+            id="transfer-pin"
+            maxlength="4"
+            type="password"
+            class="mx-auto bg-slate-50 input rounded-full"
+            placeholder="Enter 4 digit pin number"
+            required
+          />
+
+          <button id="transfer-btn" class="btn btn-primary mt-4 rounded-full">
+            Send Now
+          </button>
+        </fieldset>
+      </div>
+
+    </section>
+
     <script src="./script/machine.js"></script>
     <script src="./script/addmoney.js"></script>
     <script src="./script/cashout.js"></script>
+    <script src="./script/transfermoney.js"></script>
+
   </body>
 </html>

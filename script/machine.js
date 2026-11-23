@@ -28,9 +28,13 @@ function setBalance(value){
 function showOnly(id){
     const cashout = document.getElementById('cashout');
     const addMoney = document.getElementById('addMoney');
+    const transactions = document.getElementById('transactions');
+    const transferMoney = document.getElementById('transfer-money-container');
 
     cashout.classList.add('hidden');
     addMoney.classList.add('hidden');
+    transactions.classList.add('hidden');
+    transferMoney.classList.add('hidden');
 
     // card show funtionality
 
