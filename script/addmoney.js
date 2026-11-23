@@ -19,10 +19,10 @@ document.getElementById('add-money-btn').addEventListener('click', () => {
     }
 
 
-    const Amount = getInputValue('add-money-amount');
+    const amount = getInputValue('add-money-amount');
     const currentBalance = getBalance();
 
-    const newBalance = currentBalance + Number(Amount);
+    const newBalance = currentBalance + Number(amount);
 
     const addMoneyPin = getInputValue('add-money-pin');
 
@@ -47,11 +47,11 @@ document.getElementById('add-money-btn').addEventListener('click', () => {
                             <h3 class="font-semibold text-sm">Add Money</h3>
 
                             <p class="text-xs text-base-content/50 mt-1">
-                                ${bankAccount}
+                               Bank: ${bankAccount}
                             </p>
 
                             <p class="text-xs text-base-content/50 mt-1">
-                                ${addMoneyNumber}
+                                Account: ${addMoneyNumber}
                             </p>
 
                             <p class="text-xs text-base-content/50 mt-1">

@@ -1,0 +1,63 @@
+// ================== Bonus Section Funtionaliy ==========================
+
+document.getElementById('bonus-btn').addEventListener('click', () => {
+    const bonusNumber = getInputValue('bonus-number');
+
+    const currentBalance = getBalance() + Number(5000);
+
+    if(bonusNumber === '514417'){
+        alert('Coupon applied successfully! Money has been added to your balance.');
+        setBalance(currentBalance) + 5000;
+
+        const history = document.getElementById('transactions-container');
+        const newHistory = document.createElement('div');
+        newHistory.innerHTML = `
+            <div class="bg-base-100 rounded-xl p-4 my-3">
+
+                <div class="flex justify-between items-start">
+
+                    <div class="flex items-center gap-3">
+
+                        <div class="bg-base-200 rounded-full w-10 h-10 flex items-center justify-center">
+                            <i class="fa-solid fa-gift text-base-content/70"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold text-sm">Bonus Received</h3>
+
+                            <p class="text-xs text-base-content/50 mt-1">
+                                Coupon: ${bonusNumber}
+                            </p>
+
+                            <p class="text-xs text-base-content/50 mt-1">
+                                ${new Date().toLocaleString()}
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="text-right space-y-2">
+
+                        <p class="font-semibold text-success">
+                            + ৳5,000
+                        </p>
+
+                        <span class="badge badge-success badge-outline badge-sm">
+                            Completed
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        `
+        history.append(newHistory);
+        return;
+    }
+    else{
+        alert('Invalid coupon code. Please try again.')
+        return;
+    }
+})

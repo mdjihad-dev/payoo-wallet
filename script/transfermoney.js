@@ -38,7 +38,7 @@ const transferBtn = document.getElementById('transfer-btn').addEventListener('cl
                     <div>
                         <h3 class="font-semibold text-sm">Money Transfer</h3>
                         <p class="text-xs text-base-content/50 mt-1">
-                            To ${transferNumber}
+                            Recipient: ${transferNumber}
                         </p>
                         <p class="text-xs text-base-content/50 mt-1">
                             ${new Date().toLocaleString()}

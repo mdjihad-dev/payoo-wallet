@@ -94,12 +94,12 @@
           <p>Transfer Money</p>
         </button>
 
-        <button class="btn btn-soft btn-primary py-12 px-6 flex-col">
+        <button onclick="showOnly('bonus-container')" class="btn btn-soft btn-primary py-12 px-6 flex-col">
           <img src="./assets/opt-4.png" alt="" />
           <p>Get Bonus</p>
         </button>
 
-        <button class="btn btn-soft btn-primary py-12 px-6 flex-col">
+        <button onclick="showOnly('pay-bill')" class="btn btn-soft btn-primary py-12 px-6 flex-col">
           <img src="./assets/opt-5.png" alt="" />
           <p>Pay Bill</p>
         </button>
@@ -218,18 +218,6 @@
       </div>
     </section>
 
-    <!-- === Transactions Section === -->
-    <section id="transactions" class="w-11/12 mx-auto pb-14 hidden">
-
-      <div class="mt-7">
-        <h2 class="text-xl font-bold">Transactions</h2>
-      </div>
-
-      <div id="transactions-container">
-        
-      </div>
-    </section>
-
     <!-- === Transfer Money section === -->
     <section id="transfer-money-container" class="w-11/12 mx-auto pb-14 hidden">
 
@@ -276,13 +264,120 @@
           </button>
         </fieldset>
       </div>
-
     </section>
+    
+    <!-- === Get Bonus Section === -->
+    <section id="bonus-container" class="w-11/12 mx-auto pb-14 hidden">
+
+      <div class="mt-7">
+        <h2 class="text-xl font-bold">Get Bonus</h2>
+      </div>
+
+      <div class="mt-8">
+        <fieldset
+          class="mx-auto fieldset bg-white border-base-300 rounded-box border px-5 py-8"
+        >
+          <label class="ml-6 text-sm font-bold">Enter Bonus Coupon</label>
+          <input
+            id="bonus-number"
+            maxlength="5"
+            type="number"
+            class="mx-auto bg-slate-50 input rounded-full"
+            placeholder="Enter your coupon"
+            required
+          />
+          <br />
+      
+          <button id="bonus-btn" class="btn btn-primary mt-4 rounded-full">
+            Get Bonus
+          </button>
+
+        </fieldset>
+      </div>
+    </section>
+
+    <!-- === Pay Bill Section === -->
+    <section id="pay-bill" class="w-11/12 mx-auto pb-14 hidden">
+      <div class="mt-7">
+        <h2 class="text-xl font-bold">Pay Bill</h2>
+      </div>
+
+      <!-- == Pay Bill Form == -->
+      <div class="mt-8">
+        <fieldset
+          class="mx-auto fieldset bg-white border-base-300 rounded-box border px-5 py-8"
+        >
+        <label class="ml-6 text-sm font-bold">Select To Pay</label>
+
+          <select id="pay-bill-seclect" class="ml-6 border bg-slate-50 border-slate-300 select select-ghost rounded-full">
+            <option disabled selected>Select back</option>
+            <option value="bKash">bKash</option>
+            <option value="Nagad">Nagad</option>
+            <option value="Rocket">Rocket</option>
+            <option value="Upay">Upay</option>
+            <option value="Meghna Pay">Meghna Pay</option>
+            <option value="Islamic Wallet">Islamic Wallet</option>
+          </select>
+          <br>
+
+          <label class="ml-6 text-sm font-bold">Biller Account Number</label>
+          <input
+            id="bill-number"
+            maxlength="11"
+            type="number"
+            class="mx-auto bg-slate-50 input rounded-full"
+            placeholder="Enter account number"
+            required
+          />
+
+          <br />
+          <label class="ml-6 text-sm font-bold">Amount to Pay</label>
+          <input
+            id="bill-amount"
+            type="number"
+            class="mx-auto mb-7 bg-slate-50 input rounded-full"
+            placeholder="Add Amount to pay"
+            required
+          />
+
+          <label class="ml-6 text-sm font-bold">Pin Number</label>
+          <input
+            id="bill-pin"
+            maxlength="4"
+            type="password"
+            class="mx-auto bg-slate-50 input rounded-full"
+            placeholder="Enter 4 digit pin number"
+            required
+          />
+
+          <button id="pay-bill-btn" class="btn btn-primary mt-4 rounded-full">
+            Pay Now
+          </button>
+        </fieldset>
+      </div>
+    </section>
+
+
+    <!-- === Transactions Section === -->
+    <section id="transactions" class="w-11/12 mx-auto pb-14 hidden">
+
+      <div class="mt-7">
+        <h2 class="text-xl font-bold">Transactions</h2>
+      </div>
+
+      <div id="transactions-container">
+        
+      </div>
+    </section>
+
+
 
     <script src="./script/machine.js"></script>
     <script src="./script/addmoney.js"></script>
     <script src="./script/cashout.js"></script>
     <script src="./script/transfermoney.js"></script>
+    <script src="./script/paybill.js"></script>
+    <script src="./script/bonus.js"></script>
 
   </body>
 </html>

@@ -30,11 +30,15 @@ function showOnly(id){
     const addMoney = document.getElementById('addMoney');
     const transactions = document.getElementById('transactions');
     const transferMoney = document.getElementById('transfer-money-container');
+    const bonusMoney = document.getElementById('bonus-container');
+    const payBill = document.getElementById('pay-bill');
 
     cashout.classList.add('hidden');
     addMoney.classList.add('hidden');
     transactions.classList.add('hidden');
     transferMoney.classList.add('hidden');
+    bonusMoney.classList.add('hidden');
+    payBill.classList.add('hidden');
 
     // card show funtionality
 

@@ -32,7 +32,7 @@ document.getElementById('cashout-btn').addEventListener('click', () => {
     
     
     if(pin === '1234'){
-        alert('Cashout Successfull')
+        alert(`Cashout Successfull ${number} at ${new Date()}`)
         totalBalance.innerText = newBalance;
 
         const history = document.getElementById('transactions-container');
