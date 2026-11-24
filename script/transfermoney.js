@@ -13,6 +13,12 @@ const transferBtn = document.getElementById('transfer-btn').addEventListener('cl
     const transferAmount = getInputValue('transfer-amount');
 
     const balance = getBalance() - Number(transferAmount);
+    
+    if(balance < 0){
+        showNotification('Insufficient Balance!', '', 'error')
+        return;
+    }
+    
 
     if(transferAmount === ''){
             showNotification('Please enter amount.', '', 'error');
@@ -22,12 +28,12 @@ const transferBtn = document.getElementById('transfer-btn').addEventListener('cl
     const transferPin = getInputValue('transfer-pin')
 
     if(transferPin === ''){
-            showNotification('Please enter your pin number.', '', 'error');
+            showNotification('Please enter your PIN', '', 'error');
         return;
-    }
+    };
 
     if(transferPin == '1234'){
-        showNotification('Your transfer has been completed successfully.')
+        showNotification(`Your ${transferAmount} taka transfer has been completed successfully`)
         setBalance(balance)
 
         const history = document.getElementById('transactions-container');

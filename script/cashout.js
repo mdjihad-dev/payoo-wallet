@@ -6,7 +6,7 @@ document.getElementById('cashout-btn').addEventListener('click', () => {
     const number = cashoutNumber.value;
     
     if(number.length !== 11){
-        showNotification('Please enter a valid 11-digit Agent Number')
+        showNotification('Please enter valid 11-digit Agent Number', '', 'error')
         return;
     }
 
@@ -15,7 +15,7 @@ document.getElementById('cashout-btn').addEventListener('click', () => {
     const amount = inputAmount.value;
 
     if(amount === ''){
-        showNotification('Please enter amount.', '', 'error');
+        showNotification('Please enter amount', '', 'error');
     return;
     }
 
@@ -36,7 +36,7 @@ document.getElementById('cashout-btn').addEventListener('click', () => {
     const pin = cashoutPin.value;
     
     if(pin === ''){
-        showNotification('Please enter your pin number.', '', 'error');
+        showNotification('Please enter your PIN', '', 'error');
     return;
     }
 

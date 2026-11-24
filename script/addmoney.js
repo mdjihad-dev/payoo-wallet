@@ -42,14 +42,14 @@ document.getElementById('add-money-btn').addEventListener('click', () => {
     const addMoneyPin = getInputValue('add-money-pin');
     
     if(addMoneyPin === ''){
-        showNotification('Please enter pin number.', '', 'error');
+        showNotification('Please enter your PIN', '', 'error');
     return;
     }
 
     if(addMoneyPin == '1234'){
         showNotification(
             'Money Added Successfully!',
-            `Your ${amount} has been successfully added to your ${bankAccount} account. ${new Date}`,
+            `Your ${amount} taka has been successfully added to your ${bankAccount} account. ${new Date}`,
             'success'
         );
         setBalance(newBalance);

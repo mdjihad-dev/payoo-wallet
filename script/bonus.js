@@ -3,10 +3,14 @@
 document.getElementById('bonus-btn').addEventListener('click', () => {
     const bonusNumber = getInputValue('bonus-number');
 
+    if(bonusNumber === ''){
+        showNotification('Please enter your coupon code', '', 'error')
+        return;
+    }
     const currentBalance = getBalance() + Number(5000);
 
     if(bonusNumber === '514417'){
-        showNotification('Coupon applied successfully! Money has been added to your balance.');
+        showNotification(`Coupon applied successfully! ${5000} taka has been added to your balance`);
         setBalance(currentBalance) + 5000;
 
         const history = document.getElementById('transactions-container');
