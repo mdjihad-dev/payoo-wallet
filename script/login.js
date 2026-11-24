@@ -1,4 +1,4 @@
-// ========== Login Page funtionality =================
+// =================== Login Page funtionality =================
 
 document.getElementById('login-btn').addEventListener('click', () => {
 
@@ -12,14 +12,31 @@ document.getElementById('login-btn').addEventListener('click', () => {
     const pin = inputPin.value;
     console.log(pin);
 
-    // login Page condition
-    if(contactValue == '0123456789' && pin == '1234'){
-        alert('Login Successfull')
-        window.location.assign('home.html')
+    // ============== Login Page Condition ================
+
+    if (contactValue === '0123456789' && pin === '1234') {
+
+        showNotification(
+            'Login Successful!',
+            'Welcome to Payoo!',
+            'success'
+        ).then((result) => {
+
+            if (result.isConfirmed) {
+                window.location.href = '../home.html';
+            }
+        });
+
         return;
-    }
-    else{
-        alert('Login Failed! Plaese try again');
+
+    } else {
+
+        showNotification(
+            'Login Failed!',
+            'Please check your phone number and PIN.',
+            'error'
+        );
+
         return;
     }
 

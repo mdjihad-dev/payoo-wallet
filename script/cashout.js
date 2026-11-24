@@ -6,13 +6,18 @@ document.getElementById('cashout-btn').addEventListener('click', () => {
     const number = cashoutNumber.value;
     
     if(number.length !== 11){
-        alert('Please enter a valid 11-digit Agent Number')
+        showNotification('Please enter a valid 11-digit Agent Number')
         return;
     }
 
+    
     const inputAmount = document.getElementById('input-amount');
     const amount = inputAmount.value;
 
+    if(amount === ''){
+        showNotification('Please enter amount.', '', 'error');
+    return;
+    }
 
     const totalBalance = document.getElementById('balance');
     const balance = totalBalance.innerText;
@@ -22,7 +27,7 @@ document.getElementById('cashout-btn').addEventListener('click', () => {
     const newBalance = Number(balance) - Number(amount);
     
     if(newBalance < 0){
-        alert('Insufficient Balance!')
+        showNotification('Insufficient Balance!')
         return;
     }
     
@@ -30,9 +35,13 @@ document.getElementById('cashout-btn').addEventListener('click', () => {
     const cashoutPin = document.getElementById('cashout-pin');
     const pin = cashoutPin.value;
     
-    
+    if(pin === ''){
+        showNotification('Please enter your pin number.', '', 'error');
+    return;
+    }
+
     if(pin === '1234'){
-        alert(`Cashout Successfull ${number} at ${new Date()}`)
+        showNotification(`Cashout Successfull ${number} at ${new Date()}`)
         totalBalance.innerText = newBalance;
 
         const history = document.getElementById('transactions-container');
@@ -80,7 +89,10 @@ document.getElementById('cashout-btn').addEventListener('click', () => {
         return;
     }
     else{
-        alert('Incorrect PIN. Please try again.');
+        showNotification(
+            'Incorrect PIN. Please try again.',
+            '',
+            'error');
         return;
     }
 });

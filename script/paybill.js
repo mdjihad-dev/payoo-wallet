@@ -5,15 +5,20 @@ console.log('pay bil');
     const billAccount = getInputValue('pay-bill-seclect');
 
     if(billAccount === 'Select back'){
-        alert('Please choose a payment method to continue.')
+       showNotification('Please choose a payment method to continue.', '', 'error')
         return;
     }
 
     const billNumber = getInputValue('bill-number');
     console.log(billNumber);
 
+    if(billNumber === ''){
+        showNotification('Please enter your number', '', 'error')
+        return;
+    }
+
     if(billNumber.length !== 11){
-        alert('Please enter a valid account Number!')
+       showNotification('Please enter a valid account Number!', '', 'error')
         return;
     }
 
@@ -21,12 +26,17 @@ console.log('pay bil');
     const amount = getInputValue('bill-amount');
     const currentBalance = getBalance();
 
+    if(amount === ''){
+        showNotification('Please enter your amount', '', 'error')
+        return;
+    }
+
     const newBalance = currentBalance - Number(amount);
 
     const pinNumber = getInputValue('bill-pin');
 
     if(pinNumber === '1234'){
-        alert(`Your ${amount} Taka bill payment has been completed successfully. at ${new Date()}`)
+       showNotification(`Your ${amount} Taka bill payment has been completed successfully. at ${new Date()}`)
         setBalance(newBalance);
 
         const history = document.getElementById('transactions-container');
@@ -79,7 +89,7 @@ console.log('pay bil');
         return;
     }
     else{
-        alert('Incorrect PIN. Please try again.')
+       showNotification('Incorrect PIN. Please try again.', '', 'error')
         return;
     }
 });

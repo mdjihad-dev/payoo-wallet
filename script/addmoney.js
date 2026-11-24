@@ -6,15 +6,25 @@ document.getElementById('add-money-btn').addEventListener('click', () => {
     console.log(bankAccount);
 
     if(bankAccount == 'Select A Bank'){
-        alert('Please Seclect A Bank')
+        showNotification(
+        'Please Select A Bank!',
+        'Please choose a bank to continue.',
+        'error'
+    );
+
         return;
     }
 
     const addMoneyNumber = getInputValue('add-money-number');
     console.log(addMoneyNumber);
 
+    if(addMoneyNumber === ''){
+        showNotification('Please enter your number.', '', 'error');
+    return;
+    }
+
     if(addMoneyNumber.length !== 11){
-        alert('Please enter a valid account Number!')
+        showNotification('Please enter a valid account Number!', '', 'error')
         return;
     }
 
@@ -22,12 +32,26 @@ document.getElementById('add-money-btn').addEventListener('click', () => {
     const amount = getInputValue('add-money-amount');
     const currentBalance = getBalance();
 
+    if(amount === ''){
+        showNotification('Please enter amount.', '', 'error');
+    return;
+    }
+
     const newBalance = currentBalance + Number(amount);
 
     const addMoneyPin = getInputValue('add-money-pin');
+    
+    if(addMoneyPin === ''){
+        showNotification('Please enter pin number.', '', 'error');
+    return;
+    }
 
     if(addMoneyPin == '1234'){
-        alert(`Money added successfully! ${bankAccount} at ${new Date()}`)
+        showNotification(
+            'Money Added Successfully!',
+            `Your ${amount} has been successfully added to your ${bankAccount} account. ${new Date}`,
+            'success'
+        );
         setBalance(newBalance);
 
         const history = document.getElementById('transactions-container');
@@ -78,7 +102,10 @@ document.getElementById('add-money-btn').addEventListener('click', () => {
         history.append(newHistory);
     }
     else{
-        alert('Incorrect PIN. Please try again.')
-        return
+        showNotification(
+        'Incorrect PIN!',
+        'Please check your PIN and try again.',
+        'error'
+    );
     }
 });

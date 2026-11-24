@@ -6,7 +6,7 @@ document.getElementById('bonus-btn').addEventListener('click', () => {
     const currentBalance = getBalance() + Number(5000);
 
     if(bonusNumber === '514417'){
-        alert('Coupon applied successfully! Money has been added to your balance.');
+        showNotification('Coupon applied successfully! Money has been added to your balance.');
         setBalance(currentBalance) + 5000;
 
         const history = document.getElementById('transactions-container');
@@ -57,7 +57,7 @@ document.getElementById('bonus-btn').addEventListener('click', () => {
         return;
     }
     else{
-        alert('Invalid coupon code. Please try again.')
+        showNotification('Invalid coupon code. Please try again.', '', 'error')
         return;
     }
 })

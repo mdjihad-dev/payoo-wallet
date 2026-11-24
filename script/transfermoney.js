@@ -6,7 +6,7 @@ const transferBtn = document.getElementById('transfer-btn').addEventListener('cl
     const transferNumber = getInputValue('transfer-number');
 
     if(transferNumber.length !== 11){
-        alert('Please enter a valid 11-digit Agent Number')
+        showNotification('Please enter a valid 11-digit Agent Number', '', 'error')
         return;
     }
 
@@ -14,11 +14,20 @@ const transferBtn = document.getElementById('transfer-btn').addEventListener('cl
 
     const balance = getBalance() - Number(transferAmount);
 
+    if(transferAmount === ''){
+            showNotification('Please enter amount.', '', 'error');
+        return;
+    }
 
     const transferPin = getInputValue('transfer-pin')
 
+    if(transferPin === ''){
+            showNotification('Please enter your pin number.', '', 'error');
+        return;
+    }
+
     if(transferPin == '1234'){
-        alert('Your transfer has been completed successfully.')
+        showNotification('Your transfer has been completed successfully.')
         setBalance(balance)
 
         const history = document.getElementById('transactions-container');
@@ -65,7 +74,7 @@ const transferBtn = document.getElementById('transfer-btn').addEventListener('cl
         return;
     }
     else{
-        alert('Incorrect PIN. Please try again.')
+        showNotification('Incorrect PIN. Please try again.', '', 'error')
         return;
     }
 
