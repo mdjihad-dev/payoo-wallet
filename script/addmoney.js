@@ -11,7 +11,6 @@ document.getElementById('add-money-btn').addEventListener('click', () => {
         'Please choose a bank to continue.',
         'error'
     );
-
         return;
     }
 

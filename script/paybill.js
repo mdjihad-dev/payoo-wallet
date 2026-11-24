@@ -5,7 +5,7 @@ console.log('pay bil');
     const billAccount = getInputValue('pay-bill-seclect');
 
     if(billAccount === 'Select back'){
-       showNotification('Please choose a payment method to continue.', '', 'error')
+       showNotification('Please choose a payment method to continue.', '', 'warning')
         return;
     }
 

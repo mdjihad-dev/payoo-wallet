@@ -27,7 +27,7 @@ document.getElementById('cashout-btn').addEventListener('click', () => {
     const newBalance = Number(balance) - Number(amount);
     
     if(newBalance < 0){
-        showNotification('Insufficient Balance!')
+        showNotification('Insufficient Balance!', '', 'warning')
         return;
     }
     

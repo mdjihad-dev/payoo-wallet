@@ -15,7 +15,7 @@ const transferBtn = document.getElementById('transfer-btn').addEventListener('cl
     const balance = getBalance() - Number(transferAmount);
     
     if(balance < 0){
-        showNotification('Insufficient Balance!', '', 'error')
+        showNotification('Insufficient Balance!', '', 'warning')
         return;
     }
     

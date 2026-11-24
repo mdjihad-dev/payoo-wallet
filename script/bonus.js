@@ -11,7 +11,7 @@ document.getElementById('bonus-btn').addEventListener('click', () => {
     const useCoupon = localStorage.getItem('useCoupon');
 
     if(useCoupon === bonusNumber){
-        showNotification('You have already used this coupon code!', '', 'error');
+        showNotification('You have already used this coupon code!', '', 'warning');
         return;
     }
 
