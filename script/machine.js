@@ -75,3 +75,9 @@ function showOnly(id){
     seclected.classList.remove("hidden");
     
 }
+
+// reset form funtionality
+
+function resetForm(formId){
+    document.getElementById(formId).reset();
+}

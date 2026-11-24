@@ -1,8 +1,10 @@
 // ================== Bonus Section Funtionaliy ==========================
 
-document.getElementById('bonus-btn').addEventListener('click', () => {
-    const bonusNumber = getInputValue('bonus-number');
+document.getElementById('bonus-form').addEventListener('submit', (e) => {
+    e.preventDefault()
 
+    const bonusNumber = getInputValue('bonus-number');
+    
     if(bonusNumber === ''){
         showNotification('Please enter your coupon code', '', 'error')
         return;
@@ -20,7 +22,11 @@ document.getElementById('bonus-btn').addEventListener('click', () => {
     if(bonusNumber === '514417'){
         showNotification(`Coupon applied successfully! ${5000} taka has been added to your balance`);
         setBalance(currentBalance);
+        resetForm('bonus-form')
         localStorage.setItem('useCoupon', bonusNumber);
+
+        console.log(document.getElementById('bonus-form'));
+console.log(document.getElementById('bonus-form').reset);
 
         const history = document.getElementById('transactions-container');
         const newHistory = document.createElement('div');

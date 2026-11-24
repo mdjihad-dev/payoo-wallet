@@ -2,6 +2,10 @@
 
 document.getElementById('cashout-btn').addEventListener('click', () => {
 
+    document.getElementById('cashout-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+    });
+
     const cashoutNumber = document.getElementById('cashout-number');
     const number = cashoutNumber.value;
     
@@ -43,6 +47,7 @@ document.getElementById('cashout-btn').addEventListener('click', () => {
     if(pin === '1234'){
         showNotification(`Cashout Successfull ${number} at ${new Date()}`)
         setBalance(newBalance);
+        resetForm('cashout-form')
 
         const history = document.getElementById('transactions-container');
         const newHistory = document.createElement('div');

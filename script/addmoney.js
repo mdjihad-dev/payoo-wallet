@@ -1,7 +1,8 @@
 // ================== Add Money Section funtionality ==============================
 
-document.getElementById('add-money-btn').addEventListener('click', () => {
-
+document.getElementById('add-money-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    
     const bankAccount = getInputValue('add-money-seclect');
     console.log(bankAccount);
 
@@ -52,6 +53,7 @@ document.getElementById('add-money-btn').addEventListener('click', () => {
             'success'
         );
         setBalance(newBalance);
+        resetForm('add-money-form');
 
         const history = document.getElementById('transactions-container');
         const newHistory = document.createElement('div');

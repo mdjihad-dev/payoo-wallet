@@ -120,54 +120,56 @@
 
       <!-- == Add Money Form == -->
       <div class="mt-8">
-        <fieldset
-          class="mx-auto fieldset bg-white border-base-300 rounded-box border px-5 py-8"
-        >
-        <label class="text-sm font-bold">Select A Bank</label>
+        <form id="add-money-form">
+          <fieldset
+            class="mx-auto fieldset bg-white border-base-300 rounded-box border px-5 py-8"
+          >
+          <label class="text-sm font-bold">Select A Bank</label>
+  
+            <select id="add-money-seclect" class="border bg-slate-50 w-full border-slate-300 select select-ghost rounded-full">
+              <option disabled selected>Select A Bank</option>
+              <option>Islami Bank</option>
+              <option>DBC Bank</option>
+              <option>DBBL Bank</option>
+            </select>
+            <br>
+  
+            <label class="text-sm font-bold">Bank Account Number</label>
+            <input
+              id="add-money-number"
+              maxlength="11"
+              type="number"
+              class="mx-auto bg-slate-50 w-full input rounded-full"
+              placeholder="Enter 11 digit account number"
 
-          <select id="add-money-seclect" class="border bg-slate-50 w-full border-slate-300 select select-ghost rounded-full">
-            <option disabled selected>Select A Bank</option>
-            <option>Islami Bank</option>
-            <option>DBC Bank</option>
-            <option>DBBL Bank</option>
-          </select>
-          <br>
+            />
+  
+            <br />
+            <label class="text-sm font-bold">Amount to Add</label>
+            <input
+              id="add-money-amount"
+              maxlength="4"
+              type="number"
+              class="mx-auto mb-7 bg-slate-50 w-full input rounded-full"
+              placeholder="Add Amount to withdraw"
 
-          <label class="text-sm font-bold">Bank Account Number</label>
-          <input
-            id="add-money-number"
-            maxlength="11"
-            type="number"
-            class="mx-auto bg-slate-50 w-full input rounded-full"
-            placeholder="Enter 11 digit account number"
-            required
-          />
+            />
+  
+            <label class="text-sm font-bold">Pin Number</label>
+            <input
+              id="add-money-pin"
+              maxlength="4"
+              type="password"
+              class="mx-auto bg-slate-50 w-full input rounded-full"
+              placeholder="Enter 4 digit pin number"
 
-          <br />
-          <label class="text-sm font-bold">Amount to Add</label>
-          <input
-            id="add-money-amount"
-            maxlength="4"
-            type="number"
-            class="mx-auto mb-7 bg-slate-50 w-full input rounded-full"
-            placeholder="Add Amount to withdraw"
-            required
-          />
-
-          <label class="text-sm font-bold">Pin Number</label>
-          <input
-            id="add-money-pin"
-            maxlength="4"
-            type="password"
-            class="mx-auto bg-slate-50 w-full input rounded-full"
-            placeholder="Enter 4 digit pin number"
-            required
-          />
-
-          <button id="add-money-btn" class="btn btn-primary mt-4 rounded-full">
-            Add Money
-          </button>
-        </fieldset>
+            />
+  
+            <button id="add-money-btn" type="submit" class="btn btn-primary mt-4 rounded-full">
+              Add Money
+            </button>
+          </fieldset>
+        </form>
       </div>
     </section>
 
@@ -178,43 +180,42 @@
       </div>
 
       <div class="mt-8">
-        <fieldset
-          class="mx-auto fieldset bg-white border-base-300 rounded-box border px-5 py-8"
-        >
-          <label class="text-sm font-bold">Agent Number</label>
-          <input
-            id="cashout-number"
-            maxlength="11"
-            type="number"
-            class="mx-auto bg-slate-50 w-full input rounded-full"
-            placeholder="Enter 11 digit number"
-            required
-          />
-          <br />
-          <label class="text-sm font-bold">Amount</label>
-          <input
-            id="input-amount"
-            maxlength="4"
-            type="number"
-            class="mx-auto mb-7 bg-slate-50 w-full input rounded-full"
-            placeholder="Enter amount to withdraw"
-            required
-          />
-
-          <label class="text-sm font-bold">Pin Number</label>
-          <input
-            id="cashout-pin"
-            maxlength="4"
-            type="password"
-            class="mx-auto bg-slate-50 w-full input rounded-full"
-            placeholder="Enter 4 digit pin number"
-            required
-          />
-
-          <button id="cashout-btn" class="btn btn-primary mt-4 rounded-full">
-            Withdraw Money
-          </button>
-        </fieldset>
+        <form id="cashout-form">
+          <fieldset
+            class="mx-auto fieldset bg-white border-base-300 rounded-box border px-5 py-8"
+          >
+            <label class="text-sm font-bold">Agent Number</label>
+            <input
+              id="cashout-number"
+              maxlength="11"
+              type="number"
+              class="mx-auto bg-slate-50 w-full input rounded-full"
+              placeholder="Enter 11 digit number"
+            />
+            <br />
+            <label class="text-sm font-bold">Amount</label>
+            <input
+              id="input-amount"
+              maxlength="4"
+              type="number"
+              class="mx-auto mb-7 bg-slate-50 w-full input rounded-full"
+              placeholder="Enter amount to withdraw"
+            />
+  
+            <label class="text-sm font-bold">Pin Number</label>
+            <input
+              id="cashout-pin"
+              maxlength="4"
+              type="password"
+              class="mx-auto bg-slate-50 w-full input rounded-full"
+              placeholder="Enter 4 digit pin number"
+            />
+  
+            <button id="cashout-btn" type="submit" class="btn btn-primary mt-4 rounded-full">
+              Withdraw Money
+            </button>
+          </fieldset>
+        </form>
       </div>
     </section>
 
@@ -236,7 +237,6 @@
             type="number"
             class="mx-auto bg-slate-50 w-full input rounded-full"
             placeholder="Enter 11 digit number"
-            required
           />
           <br />
           <label class="text-sm font-bold">Amount</label>
@@ -246,7 +246,6 @@
             type="number"
             class="mx-auto mb-7 bg-slate-50 w-full input rounded-full"
             placeholder="Enter amount to transfer"
-            required
           />
 
           <label class="text-sm font-bold">Pin Number</label>
@@ -256,7 +255,6 @@
             type="password"
             class="mx-auto bg-slate-50 w-full input rounded-full"
             placeholder="Enter 4 digit pin number"
-            required
           />
 
           <button id="transfer-btn" class="btn btn-primary mt-4 rounded-full">
@@ -274,25 +272,26 @@
       </div>
 
       <div class="mt-8">
-        <fieldset
-          class="mx-auto fieldset bg-white border-base-300 rounded-box border px-5 py-8"
-        >
-          <label class="text-sm font-bold">Enter Bonus Coupon</label>
-          <input
-            id="bonus-number"
-            maxlength="5"
-            type="number"
-            class="mx-auto bg-slate-50 w-full input rounded-full"
-            placeholder="Enter your coupon"
-            required
-          />
-          <br />
-      
-          <button id="bonus-btn" class="btn btn-primary mt-4 rounded-full">
-            Get Bonus
-          </button>
-
-        </fieldset>
+        <form id="bonus-form">
+          <fieldset
+            class="mx-auto fieldset bg-white border-base-300 rounded-box border px-5 py-8"
+          >
+            <label class="text-sm font-bold">Enter Bonus Coupon</label>
+            <input
+              id="bonus-number"
+              maxlength="5"
+              type="number"
+              class="mx-auto bg-slate-50 w-full input rounded-full"
+              placeholder="Enter your coupon"
+            />
+            <br />
+        
+            <button id="bonus-btn" type="submit" class="btn btn-primary mt-4 rounded-full">
+              Get Bonus
+            </button>
+  
+          </fieldset>
+        </form>
       </div>
     </section>
 
@@ -327,7 +326,6 @@
             type="number"
             class="mx-auto bg-slate-50 w-full input rounded-full"
             placeholder="Enter account number"
-            required
           />
 
           <br />
@@ -337,7 +335,6 @@
             type="number"
             class="mx-auto mb-7 bg-slate-50 w-full input rounded-full"
             placeholder="Add Amount to pay"
-            required
           />
 
           <label class="text-sm font-bold">Pin Number</label>
@@ -347,7 +344,6 @@
             type="password"
             class="mx-auto bg-slate-50 w-full input rounded-full"
             placeholder="Enter 4 digit pin number"
-            required
           />
 
           <button id="pay-bill-btn" class="btn btn-primary mt-4 rounded-full">
