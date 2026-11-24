@@ -7,11 +7,20 @@ document.getElementById('bonus-btn').addEventListener('click', () => {
         showNotification('Please enter your coupon code', '', 'error')
         return;
     }
+
+    const useCoupon = localStorage.getItem('useCoupon');
+
+    if(useCoupon === bonusNumber){
+        showNotification('You have already used this coupon code!', '', 'error');
+        return;
+    }
+
     const currentBalance = getBalance() + Number(5000);
 
     if(bonusNumber === '514417'){
         showNotification(`Coupon applied successfully! ${5000} taka has been added to your balance`);
-        setBalance(currentBalance) + 5000;
+        setBalance(currentBalance);
+        localStorage.setItem('useCoupon', bonusNumber);
 
         const history = document.getElementById('transactions-container');
         const newHistory = document.createElement('div');
@@ -64,4 +73,4 @@ document.getElementById('bonus-btn').addEventListener('click', () => {
         showNotification('Invalid coupon code. Please try again.', '', 'error')
         return;
     }
-})
+});
